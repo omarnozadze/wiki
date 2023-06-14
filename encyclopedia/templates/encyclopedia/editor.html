@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Editor
+{% endblock %}
+
+{% block body %}
+    <h1>Editor</h1>
+    <br>
+    <form action="{% url 'editor' title=title %}" method="GET">
+        {% csrf_token %}
+        <label style="font-size: 10px;"> </label>
+        <input type="text" name="title" placeholder="Title">
+        <br>
+        <textarea style="height: 10vh;" name="content" placeholder="My Page"></textarea>
+        <br>
+        <input type="submit" value="save">
+    </form>
+{% endblock %}
